@@ -95,7 +95,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Nome"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textCapWords"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
