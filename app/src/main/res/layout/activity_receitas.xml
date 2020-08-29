@@ -45,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex: 29/08/2020"
@@ -65,9 +66,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ex: salário" />
+            android:hint="ex: salário"
+            android:inputType="textCapSentences" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -83,9 +86,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ex: salário mensal" />
+            android:hint="ex: salário mensal"
+            android:inputType="textCapSentences" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -97,5 +102,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_confirmar_branco_24dp" />
+        app:srcCompat="@drawable/ic_confirmar_branco_24dp"
+        android:onClick="salvarReceita"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

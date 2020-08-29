@@ -139,8 +139,6 @@ public class DespesasActivity extends AppCompatActivity {
         });
     }
 
-
-
     public void exibirMensagemDeAviso(String mensagem)
     {
         Toast.makeText(DespesasActivity.this, mensagem, Toast.LENGTH_SHORT).show();
