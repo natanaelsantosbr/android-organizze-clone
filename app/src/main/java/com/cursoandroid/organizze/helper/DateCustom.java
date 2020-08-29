@@ -11,4 +11,14 @@ public class DateCustom {
         return dataString;
     }
 
+    public static String mesAnoDataEscolhida(String data) {
+
+        String retornoData[] = data.split("/");
+
+        String dia = retornoData[0]; //dia
+        String mes = retornoData[1]; //mes
+        String ano = retornoData[2]; //ano;
+
+        return  mes + ano;
+    }
 }
