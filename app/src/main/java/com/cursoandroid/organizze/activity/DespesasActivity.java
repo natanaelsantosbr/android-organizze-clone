@@ -23,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.internal.api.FirebaseNoSignedInUserException;
 
 import org.w3c.dom.Text;
 
@@ -69,6 +70,7 @@ public class DespesasActivity extends AppCompatActivity {
             atualizarDespesa(despesaAtualizada );
 
             movimentacao.salvar(data);
+            finish();
         }
     }
 
