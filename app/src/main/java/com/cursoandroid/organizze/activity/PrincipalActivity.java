@@ -34,10 +34,14 @@ public class PrincipalActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
     private DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebaseDatabase();
+    private DatabaseReference usuarioRef;
+    private ValueEventListener valueEventListenerUsuario;
+
 
     private Double despesaTotal = 0.00;
     private Double receitaTotal = 0.00;
     private Double resumo = 0.00;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +56,14 @@ public class PrincipalActivity extends AppCompatActivity {
 
         textoSaudacao = findViewById(R.id.textSaudacao);
         textoSaldo = findViewById(R.id.textSaldo);
-
-        recuperarResumo();
-
     }
 
     private void recuperarResumo() {
         String emailUsuario = autenticacao.getCurrentUser().getEmail();
         String idUsuario = Base64Custom.codificarBase64(emailUsuario);
-        DatabaseReference usuarioRef = firebaseRef.child("usuarios").child(idUsuario);
+        usuarioRef = firebaseRef.child("usuarios").child(idUsuario);
 
-        usuarioRef.addValueEventListener(new ValueEventListener() {
+        valueEventListenerUsuario = usuarioRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
@@ -124,5 +125,17 @@ public class PrincipalActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        usuarioRef.removeEventListener(valueEventListenerUsuario);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        recuperarResumo();
     }
 }
