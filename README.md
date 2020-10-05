@@ -6,11 +6,12 @@ Clonar as principais ferramentas do App Organizze
 <p>Veja as principais funcionalidade do app </p>
 
 <ul>
-  <li>Slider</li>
-  <li>Cadastrar e Autenticar (Email e Senha) pelo Firebase Auth</li>
   <li>Cadastrar Receita</li>
   <li>Cadastrar Despesa</li>
-  <li>Listagem de Receitas e Despesas</li>
+  <li>Listagem de Receitas e Despesas</li>  
+  <li>Exclusão de Receita/Despesa</li>
+  <li>Slider</li>
+  <li>Cadastrar e Autenticar (Email e Senha) pelo Firebase Auth</li>
   <li>Float Action Button</li>
   <li>Deslogar Usuario</li>
   <li>Exibir Menus</li>
